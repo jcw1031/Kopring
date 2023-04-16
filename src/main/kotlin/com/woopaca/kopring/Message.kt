@@ -1,7 +1,16 @@
 package com.woopaca.kopring
 
-import org.springframework.data.annotation.Id
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 import javax.persistence.Table
 
+@Entity
 @Table(name = "messages")
-data class Message(@Id val id: String?, val text: String)
+data class Message(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long?,
+    val text: String
+)
