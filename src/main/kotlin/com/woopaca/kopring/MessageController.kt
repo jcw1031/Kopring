@@ -21,7 +21,7 @@ class MessageController(val messageService: MessageService) {
     fun findAll(): List<Message> = messageService.findMessages()
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable("id") id: String): List<Message> = messageService.findMessageById(id)
+    fun findById(@PathVariable("id") id: String): Message = messageService.findMessageById(id)
 
     @PostMapping
     fun post(@RequestBody message: Message) {
